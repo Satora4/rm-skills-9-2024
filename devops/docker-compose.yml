@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  rm-skills-9-db:
+    image: mysql:8.0.31
+    environment:
+      MYSQL_DATABASE: rm-skills-9
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./db/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+networks:
+  rm-skills-9-network:

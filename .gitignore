@@ -1,0 +1,27 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# ignore generated sources
+backend/db-model/src/generated/
+
+# Ignore IntelliJ directory
+.idea/*
+!.idea/runConfigurations/
+!.idea/dataSources/
+!.idea/dataSources.xml
+!.idea/dataSources.local.xml
+**/*.iml
+
+# Node
+node_modules
+dist
+.vscode
+
+# macOS
+.DS_Store
+
+# Ignore docker mount directory
+devops/db/data
