@@ -1,7 +1,7 @@
+import {Role} from "../enum/Role";
+
 export interface User {
-  firstName: string;
-  lastName: string;
-  email:string;
-  points: number;
+  name: string;
+  role: Role;
   administrator: boolean;
 }
