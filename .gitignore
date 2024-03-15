@@ -10,7 +10,6 @@ backend/db-model/src/generated/
 # Ignore IntelliJ directory
 .idea/*
 !.idea/runConfigurations/
-!.idea/dataSources/
 !.idea/dataSources.xml
 !.idea/dataSources.local.xml
 **/*.iml
