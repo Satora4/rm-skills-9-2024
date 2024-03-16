@@ -3,10 +3,10 @@ import {AnalysisService} from "../analysis/analysis.service";
 
 @Component({
   selector: 'delete-modal',
-  templateUrl: './confirm.component.html',
-  styleUrls: ['./confirm.component.scss']
+  templateUrl: './delete.component.html',
+  styleUrls: ['./delete.component.scss']
 })
-export class ConfirmComponent {
+export class DeleteComponent {
   modalOpen: boolean = false;
   name: string = '';
 
