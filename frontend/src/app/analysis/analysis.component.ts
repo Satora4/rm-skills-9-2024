@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AnalysisService} from './analysis.service';
 import {Analysis} from "./analysis";
-import {ModalComponent} from "../modal/modal.component";
+import {RenameAnalysis} from "./renameAnalysis";
 
 @Component({
   selector: 'app-analysis',
@@ -20,5 +20,4 @@ export class AnalysisComponent implements OnInit{
       this.analyses = users;
     });
   }
-
 }

@@ -1,0 +1,16 @@
+<button (click)="openModal()">Delete Analysis</button>
+
+<div class="modal" [ngClass]="{ 'open': modalOpen }">
+  <div class="modal-content">
+    <h2>Create Analysis</h2>
+    <form (submit)="submitForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="name" required><br>
+
+      <div>are you sure that you want to delete this?</div>
+
+      <button type="button" (click)="closeModal()">Cancel</button>
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+</div>

@@ -7,9 +7,11 @@ import {AppComponent} from "./app.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {ModalComponent} from "./modal/modal.component";
 import {FormsModule} from "@angular/forms";
+import {RenameComponent} from "./rename/rename.component";
+import {ConfirmComponent} from "./confirm/confirm.component";
 
 @NgModule({
-  declarations: [AppComponent, AnalysisComponent, ModalComponent],
+  declarations: [AppComponent, AnalysisComponent, ModalComponent, RenameComponent, ConfirmComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,

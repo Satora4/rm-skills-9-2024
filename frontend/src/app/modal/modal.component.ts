@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {AnalysisService} from "../analysis/analysis.service";
 
 @Component({
-  selector: 'app-modal',
+  selector: 'create-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })

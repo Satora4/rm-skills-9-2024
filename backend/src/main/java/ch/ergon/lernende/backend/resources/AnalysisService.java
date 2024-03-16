@@ -1,6 +1,7 @@
 package ch.ergon.lernende.backend.resources;
 
 import ch.ergon.lernende.backend.resources.dto.AnalysisDto;
+import ch.ergon.lernende.backend.resources.dto.RenameAnalysisDto;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,29 +43,28 @@ public class AnalysisService {
         return analysisDto;
     }
 
-    public String renameAnalysis(String phoneName) {
-        if (!isNameUnique(phoneName)){
+    public String renameAnalysis(RenameAnalysisDto names) {
+        if (!isNameUnique(names.getOldName())){
             return "phone Name is not unique";
         }
 
         dsl.update(ANALYSIS)
-                .set(ANALYSIS.PHONE_NAME, phoneName)
+                .set(ANALYSIS.PHONE_NAME, names.getNewName())
+                .where(ANALYSIS.PHONE_NAME.eq(names.getOldName()))
                 .execute();
 
-        return phoneName;
+        return names.getNewName();
     }
 
-    public HttpStatus deleteAnalysis(String phoneName) {
+    public void deleteAnalysis(String phoneName) {
         dsl.deleteFrom(ANALYSIS)
                 .where(ANALYSIS.PHONE_NAME.eq(phoneName))
                 .execute();
-
-        return HttpStatus.OK;
     }
 
     private boolean isNameUnique(String phoneName) {
         List<AnalysisDto> analysisDtoList = getAllAnalysis();
 
-        return analysisDtoList.stream().filter(a -> a.getPhoneName().equals(phoneName)).count() == 0L;
+        return analysisDtoList.stream().filter(a -> a.getPhoneName().equals(phoneName)).count() == 1L;
     }
 }

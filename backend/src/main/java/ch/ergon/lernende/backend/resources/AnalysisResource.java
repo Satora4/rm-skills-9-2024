@@ -1,6 +1,7 @@
 package ch.ergon.lernende.backend.resources;
 
 import ch.ergon.lernende.backend.resources.dto.AnalysisDto;
+import ch.ergon.lernende.backend.resources.dto.RenameAnalysisDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -28,13 +29,13 @@ public class AnalysisResource {
         return analysisService.createAnalysis(analysisDto);
     }
 
-    @PatchMapping
-    public String renameAnalysis(@RequestBody String phoneName) {
-        return analysisService.renameAnalysis(phoneName);
+    @PutMapping
+    public String renameAnalysis(@RequestBody RenameAnalysisDto names) {
+        return analysisService.renameAnalysis(names);
     }
 
-    @DeleteMapping
-    public HttpStatus deleteAnalysis(@RequestBody String phoneName) {
-        return analysisService.deleteAnalysis(phoneName);
+    @PutMapping("/delete")
+    public void deleteAnalysis(@RequestBody String phoneName) {
+        analysisService.deleteAnalysis(phoneName);
     }
 }
