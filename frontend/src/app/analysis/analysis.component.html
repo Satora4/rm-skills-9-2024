@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Phone Name</th>
+        <th>Price [CHF]</th>
+        <th>Manufacture</th>
+        <th>Look and Feel</th>
+        <th>RAM [GB]</th>
+        <th>OS</th>
+        <th>Storage [GB]</th>
+        <th>Cam. [Mpx]</th>
+      </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let analysis of analyses">
+      <tr>
+        <td>{{ analysis.phoneName }}</td>
+        <td>{{ analysis.price }}</td>
+        <td>{{ analysis.manufacture }}</td>
+        <td>{{ analysis.lookAndFeel }}</td>
+        <td>{{ analysis.ram }}</td>
+        <td>{{ analysis.os + " " + analysis.osVersion }}</td>
+        <td>{{ analysis.storage }}</td>
+        <td>{{ analysis.cam }}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+  <app-modal></app-modal>
+</div>

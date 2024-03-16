@@ -1,9 +1,13 @@
-CREATE TABLE IF NOT EXISTS USER
+CREATE TABLE IF NOT EXISTS ANALYSIS
 (
-    user_id       SERIAL PRIMARY KEY,
-    first_name    VARCHAR(50) NOT NULL,
-    last_name     VARCHAR(50) NOT NULL,
-    email         VARCHAR(50) NOT NULL UNIQUE,
-    points        INT         NOT NULL,
-    administrator BOOLEAN     NOT NULL
+    id              SERIAL PRIMARY KEY,
+    phone_name      VARCHAR(50) NOT NULL UNIQUE,
+    price           INT         NOT NULL,
+    manufacture     ENUM('GOOGLE', 'APPLE', 'SAMSUNG', 'HUAWEI'),
+    look_and_feel   ENUM('VERY_GOOD', 'GOOD', 'VERY_BAD', 'UNACCEPTABLE'),
+    ram             INT         NOT NULL,
+    os              ENUM('ANDROID', 'IOS', 'HARMONY_OS'),
+    os_version      INT         NOT NULL,
+    storage         INT         NOT NULL,
+    cam             INT         NOT NULL
 );
